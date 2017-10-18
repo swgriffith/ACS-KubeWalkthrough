@@ -75,3 +75,7 @@ Note: --type=LoadBalancer is how Kubernetes knows to call Azure and create the e
 
 8. Once the External IP is assigned, you can copy that and navigate to that URL in your browser. You should see your nginx pod up and running
 
+
+If you'd like to try out the Azure Container Instance connector you can follow instructions from the link below:
+https://github.com/Azure/aci-connector-k8s/blob/master/README.md
+
