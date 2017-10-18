@@ -38,9 +38,7 @@ Note: In the above I use user name and password options. If you prefer to use an
 ```
 ssh <username>@<masterFQDN>
 ```
-Note: You can get the master FQDN from the output of the deployment, or you can get it from the portal by navigating to your resource group and then 
-
-![Cloud Shell](/images/ssh.PNG)
+Note: You can get the master FQDN from the output of the deployment.
 
 You can alternatively install kubectl locally and get the credentials to access your cluster with the following commands.
 
@@ -75,7 +73,21 @@ Note: --type=LoadBalancer is how Kubernetes knows to call Azure and create the e
 
 8. Once the External IP is assigned, you can copy that and navigate to that URL in your browser. You should see your nginx pod up and running
 
+## Declaritive Deployment
+The previous steps ran through an imperitive deployment process. If you wish to deploy the same using a yaml file you can pull the nginx.yaml from this repo and run the following:
 
+```
+#cleanup the prior deployment and service
+kubectl delete deployments nginx
+kubectl delete svc nginx
+
+kubectl create -f nginx.yaml
+
+#watch and wait for the public ip to be created
+kubectl get svc --watch
+```
+
+## Azure Container Instance Connector
 If you'd like to try out the Azure Container Instance connector you can follow instructions from the link below:
 https://github.com/Azure/aci-connector-k8s/blob/master/README.md
 
