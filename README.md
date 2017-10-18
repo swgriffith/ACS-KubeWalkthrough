@@ -33,7 +33,7 @@ az acs create --orchestrator-type Kubernetes --name $CLUSTERNAME --resource-grou
 
 Note: In the above I use user name and password options. If you prefer to use an ssh key instead you can leave those out and use the --generate-ssh-keys flag. That will generate the necessary keys in your .ssh folder. Just keep in mind that if you're using the cloud shell the .ssh folder will not persist if you lose your session.
 
-4. After the process comletes, usually 5-10 minutes, you can ssh into the master node as follows:
+4. After the process completes, usually 5-10 minutes, you can ssh into the master node as follows:
 
 ```
 ssh <username>@<masterFQDN>
@@ -74,7 +74,7 @@ Note: --type=LoadBalancer is how Kubernetes knows to call Azure and create the e
 8. Once the External IP is assigned, you can copy that and navigate to that URL in your browser. You should see your nginx pod up and running
 
 ## Declaritive Deployment
-The previous steps ran through an imperitive deployment process. If you wish to deploy the same using a yaml file you can pull the nginx.yaml from this repo and run the following:
+The previous steps ran through an imperitive deployment process. If you wish to deploy the same using a yaml file you can pull the nginx.yaml from this repo and run the following. If you look at the yaml file you'll see that it consists of two parts. One is the Service creation, which is needed to get the public endpoint and Azure Load Balancer rules, and the second is the nginx deployment, which will create the deployment, replica set and pod.
 
 ```
 #cleanup the prior deployment and service
