@@ -1,4 +1,4 @@
-# ACS-KubeWalkthrough
+# ACS KubeWalkthrough
 The following provides a basic walkthrough of deploying a Kubernetes cluster on Azure Container Service, and deploying your first application on the cluster. A longer version can be found at the following:
 
 https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-kubernetes-walkthrough
